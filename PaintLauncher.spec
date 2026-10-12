@@ -6,11 +6,12 @@
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
 
 datas = []
-# Примеры JSON и инструкции кладём рядом с приложением
-for f in ('sample_2d.json', 'bracket_2d.json', 'gear_2d.json',
-          'sample_3d.json', 'bolt_3d.json', 'flange_3d.json',
-          'PROMPT.md', 'PROMPT3D.md', 'README_INSTRUCTIONS.md'):
-    datas.append(('example/' + f, '.'))
+# Примеры JSON и инструкции кладём рядом с приложением.
+# Путь относительно корня репозитория (где лежит .spec файл).
+import glob, os as _os
+for pat in ('example/*.json', 'example/*.md'):
+    for f in glob.glob(pat):
+        datas.append((f, '.'))
 
 hiddenimports = ['draw2d', 'ezdxf', 'matplotlib']
 

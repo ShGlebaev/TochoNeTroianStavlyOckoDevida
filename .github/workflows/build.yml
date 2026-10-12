@@ -22,16 +22,13 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
       - name: Build (PyInstaller)
         run: pyinstaller --clean --noconfirm PaintLauncher.spec
-        env:
-          # Убрать, если нужна 3D-вкладка (тяжёлее и может упасть на CI)
-          NO3D: '1'
 
       - name: Package (Linux)
         if: runner.os == 'Linux'
