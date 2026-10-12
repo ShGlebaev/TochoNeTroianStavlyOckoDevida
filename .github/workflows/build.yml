@@ -1,0 +1,50 @@
+name: build-app
+
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: PaintLauncher-win
+          - os: ubuntu-latest
+            artifact: PaintLauncher-linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build (PyInstaller)
+        run: pyinstaller --clean --noconfirm PaintLauncher.spec
+        env:
+          # Убрать, если нужна 3D-вкладка (тяжёлее и может упасть на CI)
+          NO3D: '1'
+
+      - name: Package (Linux)
+        if: runner.os == 'Linux'
+        run: tar -czf PaintLauncher-linux.tar.gz -C dist PaintLauncher
+
+      - name: Package (Windows)
+        if: runner.os == 'Windows'
+        run: Compress-Archive -Path dist\PaintLauncher -DestinationPath PaintLauncher-win.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: |
+            PaintLauncher-linux.tar.gz
+            PaintLauncher-win.zip
+          if-no-files-found: error

@@ -1,0 +1,9 @@
+{
+  "ops": [
+    { "op": "cylinder", "d": 16, "h": 60, "at": [0, 0, 0] },
+    { "op": "cylinder", "d": 30, "h": 12, "at": [0, 0, 48] },
+    { "op": "cut_prism_through", "shape": "square", "size": 8, "center": [0, 0], "axis": "Z", "rot": 0 },
+    { "op": "hole", "d": 6, "center": [0, 0], "axis": "Z", "through": true },
+    { "op": "fillet", "r": 2, "sel": "top" }
+  ]
+}

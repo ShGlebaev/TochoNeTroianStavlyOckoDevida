@@ -1,0 +1,23 @@
+{
+  "sheet": {
+    "format": "A4",
+    "orientation": "landscape",
+    "frame": true,
+    "title_block": { "form": "1", "code": "ПН.002", "name": "Кронштейн", "author": "", "group": "", "scale": "1:1" }
+  },
+  "view": { "fit": "auto", "dim_margin": 15 },
+  "entities": [
+    { "type": "polyline", "pts": [[0,0],[100,0],[100,60],[60,60],[60,40],[0,40]], "closed": true, "lt": "main" },
+    { "type": "circle", "c": [80, 40], "r": 6, "lt": "main" },
+    { "type": "circle", "c": [20, 20], "r": 6, "lt": "main" },
+    { "type": "line", "p1": [70, 40], "p2": [90, 40], "lt": "center" },
+    { "type": "line", "p1": [80, 30], "p2": [80, 50], "lt": "center" },
+    { "type": "line", "p1": [10, 20], "p2": [30, 20], "lt": "center" },
+    { "type": "line", "p1": [20, 10], "p2": [20, 30], "lt": "center" },
+    { "type": "dim_linear", "p1": [0, 0], "p2": [100, 0], "orient": "h", "offset": -12 },
+    { "type": "dim_linear", "p1": [0, 0], "p2": [0, 40], "orient": "v", "offset": -12 },
+    { "type": "dim_diameter", "c": [80, 40], "r": 6, "angle": 45 },
+    { "type": "dim_diameter", "c": [20, 20], "r": 6, "angle": 135 },
+    { "type": "leader", "pts": [[80, 46], [95, 55], [110, 55]], "text": "2 отв. Ø12" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "sheet": {
+    "format": "A3",
+    "orientation": "landscape",
+    "frame": true,
+    "title_block": { "form": "1", "code": "ПН.003", "name": "Шестерня", "author": "", "group": "", "scale": "1:1" }
+  },
+  "view": { "fit": "auto", "dim_margin": 20 },
+  "entities": [
+    { "type": "circle", "c": [0, 0], "r": 50, "lt": "main" },
+    { "type": "circle", "c": [0, 0], "r": 44, "lt": "dashed" },
+    { "type": "circle", "c": [0, 0], "r": 15, "lt": "main" },
+    { "type": "line", "p1": [-60, 0], "p2": [60, 0], "lt": "center" },
+    { "type": "line", "p1": [0, -60], "p2": [0, 60], "lt": "center" },
+    { "type": "dim_diameter", "c": [0, 0], "r": 50, "angle": 30, "text": "Ø100" },
+    { "type": "dim_diameter", "c": [0, 0], "r": 15, "angle": 150, "text": "Ø30H7" },
+    { "type": "leader", "pts": [[35, 35], [70, 60], [90, 60]], "text": "Ø88 делит." },
+    { "type": "table", "p": [230, 200], "col_w": [40, 40], "row_h": 8,
+      "rows": [["Параметр", "Знач."], ["Модуль m", "4"], ["Число зубьев z", "22"], ["Диам. делит. d", "88"], ["Угол α", "20°"]] }
+  ]
+}

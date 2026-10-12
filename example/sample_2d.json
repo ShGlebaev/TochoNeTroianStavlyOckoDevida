@@ -1,0 +1,27 @@
+{
+  "sheet": {
+    "format": "A4",
+    "orientation": "landscape",
+    "frame": true,
+    "title_block": {
+      "form": "1",
+      "code": "ПН.001",
+      "name": "Пластина",
+      "author": "Иванов",
+      "group": "У",
+      "scale": "1:1"
+    }
+  },
+  "view": { "fit": "auto", "dim_margin": 15 },
+  "entities": [
+    { "type": "rect", "p": [0, 0], "w": 120, "h": 80, "lt": "main" },
+    { "type": "circle", "c": [30, 40], "r": 8, "lt": "main" },
+    { "type": "circle", "c": [90, 40], "r": 8, "lt": "main" },
+    { "type": "line", "p1": [18, 40], "p2": [42, 40], "lt": "center" },
+    { "type": "line", "p1": [30, 28], "p2": [30, 52], "lt": "center" },
+    { "type": "dim_linear", "p1": [0, 0], "p2": [120, 0], "orient": "h", "offset": -12 },
+    { "type": "dim_linear", "p1": [0, 0], "p2": [0, 80], "orient": "v", "offset": -12 },
+    { "type": "dim_diameter", "c": [30, 40], "r": 8, "angle": 45 },
+    { "type": "text", "p": [60, 90], "text": "Пластина 120x80", "h": 5, "align": "center", "lt": "thin" }
+  ]
+}

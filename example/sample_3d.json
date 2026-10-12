@@ -1,0 +1,11 @@
+{
+  "ops": [
+    { "op": "box", "w": 80, "l": 60, "h": 20, "at": [-40, -30, 0] },
+    { "op": "hole", "d": 10, "center": [-25, -15], "axis": "Z", "through": true },
+    { "op": "hole", "d": 10, "center": [25, -15], "axis": "Z", "through": true },
+    { "op": "hole", "d": 10, "center": [-25, 15], "axis": "Z", "through": true },
+    { "op": "hole", "d": 10, "center": [25, 15], "axis": "Z", "through": true },
+    { "op": "fillet", "r": 5, "sel": "vertical" },
+    { "op": "chamfer", "r": 1.5, "sel": "top" }
+  ]
+}

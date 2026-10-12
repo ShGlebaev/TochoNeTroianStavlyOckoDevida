@@ -1,0 +1,9 @@
+{
+  "ops": [
+    { "op": "cylinder", "d": 120, "h": 15, "at": [0, 0, 0] },
+    { "op": "cylinder", "d": 40, "h": 15, "at": [0, 0, 0], "cut": true },
+    { "op": "hole_pattern_circular", "d": 12, "count": 6, "bolt_circle_d": 90, "axis": "Z", "start_angle": 0 },
+    { "op": "chamfer", "r": 2, "sel": "top" },
+    { "op": "chamfer", "r": 2, "sel": "bottom" }
+  ]
+}
